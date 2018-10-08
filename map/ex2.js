@@ -43,7 +43,20 @@ En sortie: [
  */
 
 function getFoodCategories(foods) {
+   const Produit = foods.map(chaine=>{
+     if (foods.isVegetarian===true){
+       return chaine.food + " is not suitable for vegetarians"
+     }else{
+       return chaine.food + " is suitable for vegetarians"
+     }  
+  })
+  return Produit
 }
+console.log(getFoodCategories([{food: "Tofu", isVegetarian: true}, {food: "Sausage", isVegetarian: false}]))
+
+
+
+
 
 
 

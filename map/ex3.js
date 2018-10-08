@@ -60,9 +60,30 @@ En sortie:
  */
 
 function getMoviesFreshness(movies) {
+  const Films = movies.map(x => {
+    if (x.rating < 60) {
+      return {
+        name: x.name,
+        rating: x.rating,
+        label: "rotten"
+      };
+    } else if (x.rating >= 60 && x.rating <= 75) {
+      return {
+        name: x.name,
+        rating: x.rating,
+        label: "fresh"
+      };
+    } else {
+      return {
+        name: x.name,
+        rating: x.rating,
+        label: "certified fresh"
+      };
+    }
+  });
+  return Films;
 }
-
-
+console.log(getMoviesFreshness([{ name: "Crazy Rich Asians", rating: 93 }]));
 
 // Ne pas modifier l'export
 module.exports = getMoviesFreshness;
