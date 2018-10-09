@@ -44,7 +44,7 @@ En sortie: [
 
 function getFoodCategories(foods) {
   const Produit = foods.map(chaine => {
-    if (chaine.isVegetarian === true) {
+    if (chaine.isVegetarian === false) {
       return chaine.food + " is not suitable for vegetarians";
     } else {
       return chaine.food + " is suitable for vegetarians";
