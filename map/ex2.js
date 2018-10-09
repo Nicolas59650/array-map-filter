@@ -43,22 +43,21 @@ En sortie: [
  */
 
 function getFoodCategories(foods) {
-   const Produit = foods.map(chaine=>{
-     if (foods.isVegetarian===true){
-       return chaine.food + " is not suitable for vegetarians"
-     }else{
-       return chaine.food + " is suitable for vegetarians"
-     }  
-  })
-  return Produit
+  const Produit = foods.map(chaine => {
+    if (chaine.isVegetarian === true) {
+      return chaine.food + " is not suitable for vegetarians";
+    } else {
+      return chaine.food + " is suitable for vegetarians";
+    }
+  });
+  return Produit;
 }
-console.log(getFoodCategories([{food: "Tofu", isVegetarian: true}, {food: "Sausage", isVegetarian: false}]))
-
-
-
-
-
-
+console.log(
+  getFoodCategories([
+    { food: "Tofu", isVegetarian: true },
+    { food: "Sausage", isVegetarian: false }
+  ])
+);
 
 // Ne pas modifier l'export
 module.exports = getFoodCategories;
