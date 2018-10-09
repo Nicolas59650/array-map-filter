@@ -29,7 +29,24 @@ Sortie attendue:
  */
 
 function filterOnPrice(products, maxPrice) {
+  const Phone = products.filter(x => {
+    if (x.price <= maxPrice) {
+      return { name: x.name, price: x.price };
+    }
+  });
+  return Phone;
 }
+console.log(
+  filterOnPrice(
+    [
+      { name: "iPhone X", price: 1159 },
+      { name: "Xiaomi Mi A2", price: 209 },
+      { name: "Samsung Galaxy Note 9", price: 992 },
+      { name: "Huawei P20", price: 480 }
+    ],
+    500
+  )
+);
 
 // Ne pas modifier l'export
 module.exports = filterOnPrice;

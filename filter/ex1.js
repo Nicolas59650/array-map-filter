@@ -12,7 +12,12 @@ Sortie attendue:
  */
 
 function getPositiveNumbers(numbers) {
+  const PositiveNbr = numbers.filter(x => {
+    return x >= 0;
+  });
+  return PositiveNbr;
 }
+console.log(getPositiveNumbers([-2, -1, 0, 1, 2]));
 
 // Si besoin, tu peux toujours visualiser le résultat avec console.log,
 // mais alors, il faut alors lancer l'exercice avec node filter/ex1

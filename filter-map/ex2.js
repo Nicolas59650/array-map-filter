@@ -25,6 +25,24 @@ Sortie attendue:
 */
 
 function getCampusesTeachingReact(campuses) {
+  const WildCodeSchool = campuses
+    .filter(x => {
+      if (x.curriculums.includes("JS/React")) return x;
+    })
+    .map(x => {
+      return x.city;
+    });
+  return WildCodeSchool;
 }
-
+console.log(
+  getCampusesTeachingReact([
+    { city: "Bordeaux", curriculums: ["PHP/Symfony", "JS/React"] },
+    { city: "La Loupe", curriculums: ["JS/Angular"] },
+    { city: "Lille", curriculums: ["PHP/Symfony", "JS/React"] },
+    { city: "Marseille", curriculums: ["JS/React"] },
+    { city: "Orléans", curriculums: ["PHP/Symfony"] },
+    { city: "Reims", curriculums: ["JS/React"] },
+    { city: "Toulouse", curriculums: ["JEE/Android", "JS/React"] }
+  ])
+);
 module.exports = getCampusesTeachingReact;
